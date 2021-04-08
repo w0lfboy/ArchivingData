@@ -15,9 +15,13 @@ I completed this project in my bootcamp at the University of Richmond.  Below is
   These tools, in addition to archives, backups, scripting, and task automation, contribute to a fully comprehensive log management system.
   
 #Step 1: Create, Extract, Compress, and Manage tar Backup Archives
+
 #Step 2: Create, Manage, and Automate Cron Jobs
+
 #Step 3: Write Basic Bash Scripts
+
 #Step 4: Manage Log File Sizes
+
 #Bonus: Check for Policy and File Violations
 
 **All of this was done on a Ubuntu VM**
