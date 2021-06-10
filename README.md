@@ -4,13 +4,15 @@
   - Log size management using logrotate.
   - Log auditing with auditd to track events, record the events, detect abuse or unauthorized activity, and create custom reports.
   These tools, in addition to archives, backups, scripting, and task automation, contribute to a fully comprehensive log management system.
+  
+  Steps for Archiving
   - Step 1: Create, Extract, Compress, and Manage tar Backup Archives
   - Step 2: Create, Manage, and Automate Cron Jobs
   - Step 3: Write Basic Bash Scripts
   - Step 4: Manage Log File Sizes
   - Step 5: Check for Policy and File Violations
 
-## Step 1: Create, Extract, Compress, and Manage tar Backup Archives
+##Step 1: Create, Extract, Compress, and Manage tar Backup Archives
     - Command to extract `TarDocs.tar` 
       ```tar -xf TarDocs.tar```
     - Create a tar archive called `Javaless_Docs.tar` that excludes the Java directory from the newly extracted `TarDocs/Document/` directory.
