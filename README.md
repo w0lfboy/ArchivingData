@@ -24,14 +24,14 @@
   - To use the options simultaneously would not work since you cannot extract from a tar that has not been created.  
       
 ## Step 2: Create, Manage, and Automate Cron Jobs
-    - In response to a ransomware attack, you have been tasked with creating an archiving and backup scheme to mitigate against CryptoLocker malware. 
-    This attack would encrypt the entire server’s hard disk and can only be unlocked using a 256-bit digital key after a Bitcoin payment is delivered.
-    - For this task, you'll need to create an archiving cron job using the following specifications:
-        This cron job should create an archive of the following file: /var/log/auth.log.
-        The filename and location of the archive should be: /auth_backup.tgz.
-        The archiving process should be scheduled to run every Wednesday at 6 a.m.
-        Use the correct archiving zip option to compress the archive using gzip.
-    0 6 * * 3 tar -czvf auth_backup.tgz /var/log/auth.log > /dev/null 2>&1
+- In response to a ransomware attack, you have been tasked with creating an archiving and backup scheme to mitigate against CryptoLocker malware. 
+  This attack would encrypt the entire server’s hard disk and can only be unlocked using a 256-bit digital key after a Bitcoin payment is delivered.
+- For this task, you'll need to create an archiving cron job using the following specifications:
+  - This cron job should create an archive of the following file: /var/log/auth.log.
+  - The filename and location of the archive should be: /auth_backup.tgz.
+  - The archiving process should be scheduled to run every Wednesday at 6 a.m.
+  - Use the correct archiving zip option to compress the archive using gzip.
+  - ```0 6 * * 3 tar -czvf auth_backup.tgz /var/log/auth.log > /dev/null 2>&1```
     
 ## Step 3: Write Basic Bash Scripts
     - Portions of the Gramm-Leach-Bliley Act require organizations to maintain a regular backup regimen for the safe and secure storage of financial data.
