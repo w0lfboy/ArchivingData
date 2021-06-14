@@ -74,14 +74,16 @@
     - Delays compression.
     - Skips error messages for missing logs and continues to next log.
     - logrotate.config edits
-             ```/var/log/auth.log {
+    
+             ```
+             /var/log/auth.log {
                     missingok
                     weekly
                     rotate 7
                     notifempty
                     delaycompress
                 }
-                                     ``` 
+                                 ``` 
 ## Step 5: Check for Policy and File Violations
   - In an effort to help mitigate against future attacks, you have decided to create an event monitoring system that specifically generates reports whenever new accounts are created or modified, and when any modifications are made to authorization logs.
   - Verify the auditd service is active
@@ -89,24 +91,24 @@
   - Edit the auditd config file using the following parameters.
     - Number of retained logs is seven.
     - Maximum log file size is 35.
-     - `sudo nano /etc/audit/auditd.conf`
+      - `sudo nano /etc/audit/auditd.conf`
     - Edit the rules for auditd. Create rules that watch the following paths:
      - For /etc/shadow, set wra for the permissions to monitor and set the keyname for this rule to hashpass_audit.
      - For /etc/passwd, set wra for the permissions to monitor and set the keyname for this rule to userpass_audit.
      - For /var/log/auth.log, set wra for the permissions to monitor and set the keyname for this rule to authlog_audit.
-      - `sudo nano /etc/audit/rules.d/audit.rules`
-         `-w /etc/shadow -p wra -k hashpass_audit`
-         `-w /etc/passwd -p wra -k userpass_audit`
-         `-w /var/log/auth.log -p wra -k authlog_audit`
+       - `sudo nano /etc/audit/rules.d/audit.rules`
+         - `-w /etc/shadow -p wra -k hashpass_audit`
+         - `-w /etc/passwd -p wra -k userpass_audit`
+         - `-w /var/log/auth.log -p wra -k authlog_audit`
     - Restart the auditd daemon.
-        `sudo systemctl restart auditd`
+        - `sudo systemctl restart auditd`
     - Perform a listing that reveals all existing auditd rules.
-        `sudo auditctl -l`
+        - `sudo auditctl -l`
     - Produce an audit report that returns results for all user authentications.
-        `sudo aureport -au`
+        - `sudo aureport -au`
     - Now you will shift into hacker mode. Create a user with sudo useradd attacker and produce an audit report that lists account modifications.
-        `sudo aureport -m` 
+        - `sudo aureport -m` 
     - Use auditctl to add another rule that watches the /var/log/cron directory.
-        `sudo auditctl -w /var/log/cron -p war -k monitor_varcron`
+        - `sudo auditctl -w /var/log/cron -p war -k monitor_varcron`
     - Perform a listing that reveals changes to the auditd rules took affect.
-        `sudo auditctl -l`
+        - `sudo auditctl -l`
