@@ -34,16 +34,16 @@
   - ```0 6 * * 3 tar -czvf auth_backup.tgz /var/log/auth.log > /dev/null 2>&1```
     
 ## Step 3: Write Basic Bash Scripts
-    - Portions of the Gramm-Leach-Bliley Act require organizations to maintain a regular backup regimen for the safe and secure storage of financial data.
-    - You'll first need to set up multiple backup directories. Each directory will be dedicated to housing text files that you will create with different kinds of system information.
-      mkdir ~/backups/{freemen,diskuse,openlist,freedisk}
-    - Create the system.sh script file so that it that does the following:
-        Prints the amount of free memory on the system and saves it to ~/backups/freemem/free_mem.txt.
-        Prints disk usage and saves it to ~/backups/diskuse/disk_usage.txt.
-        Lists all open files and saves it to ~/backups/openlist/open_list.txt.
-        Prints file system disk space statistics and saves it to ~/backups/freedisk/free_disk.txt.
-            **system.sh**
-            #!/bin/bash
+  - Portions of the Gramm-Leach-Bliley Act require organizations to maintain a regular backup regimen for the safe and secure storage of financial data.
+  - You'll first need to set up multiple backup directories. Each directory will be dedicated to housing text files that you will create with different kinds of system information.
+    - ```mkdir ~/backups/{freemen,diskuse,openlist,freedisk}```
+  - Create the `system.sh` script file so that it that does the following:
+    - Prints the amount of free memory on the system and saves it to ~/backups/freemem/free_mem.txt.
+    - Prints disk usage and saves it to ~/backups/diskuse/disk_usage.txt.
+    - Lists all open files and saves it to ~/backups/openlist/open_list.txt.
+    - Prints file system disk space statistics and saves it to ~/backups/freedisk/free_disk.txt.
+      -     system.sh
+         ```#!/bin/bash
             #Print out free memory on the system and save it to /freemem
              free -mh > ~/backups/freemem/free_mem.txt
             #Print disk usage and save it to /diskuse
@@ -51,16 +51,17 @@
             #List all open files and save to /openlist
              lsof > ~/backups/openlist/open_list.txt
             #Print file system disk space stats
-             df -h > ~/backups/freedisk/free_disk.txt
+             df -h > ~/backups/freedisk/free_disk.txt```
+             
     - Save this file and make sure to change or modify the system.sh file permissions so that it is executable.
-        chmod +x system.sh
+      - `chmod +x system.sh`
     - Commands to test script (from /backups)
-        cat openlist/open_list.txt
-        cat freemem/free_mem.txt
-        cat freedisk/freedisk.txt
-        cat diskuse/disk_use.txt
+      -  cat openlist/open_list.txt
+      -  cat freemem/free_mem.txt
+      -  cat freedisk/freedisk.txt
+      -  cat diskuse/disk_use.txt
     - Automate your script system.sh by adding it to the weekly system-wide cron directory.
-        sudo cp ~/backups/system.sh /etc/cron.weekly
+      -  sudo cp ~/backups/system.sh /etc/cron.weekly
         
 ## Step 4: Manage Log File Sizes
     - You realize that the spam messages are making the size of the log files unmanageable.
