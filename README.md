@@ -14,11 +14,11 @@
 
 ## Step 1: Create, Extract, Compress, and Manage tar Backup Archives
 - Command to extract `TarDocs.tar` 
-      ```tar -xf TarDocs.tar```
+  -  ```tar -xf TarDocs.tar```
 - Create a tar archive called `Javaless_Docs.tar` that excludes the Java directory from the newly extracted `TarDocs/Document/` directory.
-      ```sudo tar -cvvf Javaless_Doc.tar --exclude Java ~/Projects/TarDocs/Documents```
+  -  ```sudo tar -cvvf Javaless_Doc.tar --exclude Java ~/Projects/TarDocs/Documents```
 - Verify that this new `Javaless_Docs.tar` archive does not contain the Java subdirectory by using tar to list the contents of `Javaless_Docs.tar` and then piping `grep` to       search for Java.
-     ```tar -tvvf Javaless_Doc.tar | grep -i java```
+  -  ```tar -tvvf Javaless_Doc.tar | grep -i java```
 - Why wouldn't you use the options `-x` and `-c` at the same time with tar?
   - The `-x` and `-c` both do different things.  `-x` extracts files from an archive and `-c` creates a new archive.   
   - To use the options simultaneously would not work since you cannot extract from a tar that has not been created.  
