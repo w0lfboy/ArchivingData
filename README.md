@@ -43,7 +43,7 @@
     - Lists all open files and saves it to ~/backups/openlist/open_list.txt.
     - Prints file system disk space statistics and saves it to ~/backups/freedisk/free_disk.txt.
       -     system.sh
-         ``` #!/bin/bash
+             #!/bin/bash
              #Print out free memory on the system and save it to /freemem
              free -mh > ~/backups/freemem/free_mem.txt
              #Print disk usage and save it to /diskuse
@@ -51,7 +51,7 @@
              #List all open files and save to /openlist
              lsof > ~/backups/openlist/open_list.txt
              #Print file system disk space stats
-             df -h > ~/backups/freedisk/free_disk.txt```
+             df -h > ~/backups/freedisk/free_disk.txt
              
     - Save this file and make sure to change or modify the system.sh file permissions so that it is executable.
       - `chmod +x system.sh`
