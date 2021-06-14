@@ -43,6 +43,7 @@
     - Lists all open files and saves it to ~/backups/openlist/open_list.txt.
     - Prints file system disk space statistics and saves it to ~/backups/freedisk/free_disk.txt.
       -     system.sh
+      
              #!/bin/bash
              #Print out free memory on the system and save it to /freemem
              free -mh > ~/backups/freemem/free_mem.txt
