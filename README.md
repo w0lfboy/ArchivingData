@@ -54,14 +54,14 @@
              df -h > ~/backups/freedisk/free_disk.txt```
              
     - Save this file and make sure to change or modify the system.sh file permissions so that it is executable.
-     - `chmod +x system.sh`
+      - `chmod +x system.sh`
     - Commands to test script (from /backups)
-     -  `cat openlist/open_list.txt`
-     -  `cat freemem/free_mem.txt`
-     -  `cat freedisk/freedisk.txt`
-     -  `cat diskuse/disk_use.txt`
+      -  `cat openlist/open_list.txt`
+      -  `cat freemem/free_mem.txt`
+      -  `cat freedisk/freedisk.txt`
+      -  `cat diskuse/disk_use.txt`
     - Automate your script system.sh by adding it to the weekly system-wide cron directory.
-     -  `sudo cp ~/backups/system.sh /etc/cron.weekly`
+      -  `sudo cp ~/backups/system.sh /etc/cron.weekly`
         
 ## Step 4: Manage Log File Sizes
   - You realize that the spam messages are making the size of the log files unmanageable.
@@ -75,7 +75,7 @@
     - Skips error messages for missing logs and continues to next log.
     - logrotate.config edits
     
-             ```
+             
              /var/log/auth.log {
                     missingok
                     weekly
@@ -83,7 +83,7 @@
                     notifempty
                     delaycompress
                 }
-                                 ``` 
+                                 
 ## Step 5: Check for Policy and File Violations
   - In an effort to help mitigate against future attacks, you have decided to create an event monitoring system that specifically generates reports whenever new accounts are created or modified, and when any modifications are made to authorization logs.
   - Verify the auditd service is active
